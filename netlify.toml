@@ -1,20 +1,11 @@
 [build]
   command = "pnpm run build"
   publish = "build"
-  environment = { NODE_VERSION = "20.11.0" } # Tentukan versi Node.js yang digunakan selama proses build
-
-  cache = { paths = ["node_modules/**/*", ".pnpm-store/**/*"] }
-
-[[plugins]]
-  package = "@netlify/plugin-postbuild"
-  [plugins.inputs]
-    command = "npm test"
 
 [build.environment]
-  CUSTOM_VAR = "value"
-
-[build.lifecycle]
-  onPostBuild = "echo Build completed successfully!"
-
+  NODE_VERSION = "20.11.0"
+  
 [[plugins]]
-  package = "@netlify/plugin-on-demand-builder"
+  package = "@netlify/plugin-functions-core"
+  [plugins.inputs]
+    NODE_ENV = "production"
