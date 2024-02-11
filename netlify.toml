@@ -4,8 +4,5 @@
 
 [build.environment]
   NODE_VERSION = "20.11.0"
-  
-[[plugins]]
-  package = "@netlify/plugin-functions-core"
-  [plugins.inputs]
-    NODE_ENV = "production"
+
+
